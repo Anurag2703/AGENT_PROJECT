@@ -1,0 +1,32 @@
+agent-project/
+├── backend/
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── main.py                      # FastAPI app + routers + websocket mount
+│   │   ├── routes_rest.py               # REST endpoints (start task, status, cancel)
+│   │   ├── ws_handler.py                # WebSocket management / broadcast helpers
+│   │   ├── langgraph_runner.py          # LangGraph orchestration + streaming hooks
+│   │   ├── a2a_client.py                # A2A client stub (delegate tasks to other agents)
+│   │   ├── models.py                    # Pydantic models / Task DB models
+│   │   ├── storage.py                   # Simple in-memory or file-based persistence
+│   │   ├── utils.py                     # helper util functions (IDs, logging)
+│   │   └── config.py                    # configuration, env var reading
+│   ├── AGENT.md                         # Documentation about the agent & API
+│   ├── requirements.txt
+│   ├── Dockerfile
+│   └── README.md
+|
+├── frontend/
+│   ├── web/
+│   │   ├── index.html
+│   │   ├── package.json
+│   │   ├── vite.config.js
+│   │   └── src/
+│   │       ├── main.jsx
+│   │       ├── App.jsx
+│   │       ├── api.js                   # minimal REST + WS helpers
+│   │       └── components/
+│   │           ├── StreamViewer.jsx     # WebSocket streaming UI
+│   │           ├── TaskForm.jsx
+│   │           └── ResultCard.jsx
+└── .gitignore
