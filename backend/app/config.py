@@ -3,16 +3,20 @@
 # Purpose: Configuration, env var reading
 # -------------------------------------------------------
 
-
 from pydantic_settings import BaseSettings
+from dotenv import load_dotenv
+import os
+
+# Load variables from .env file
+load_dotenv()
 
 class Settings(BaseSettings):
-    HOST: str = "0.0.0.0"
-    PORT: int = 8000
-    DEBUG: bool = True
-    WS_PATH: str = "/ws/run"
-    DATABASE_URL: str = "sqlite:///./tasks.db"
-    GEMINI_API_KEY: str = "AIzaSyCuu16jQLiPDpbUVaZQu9x5NF2N5nVDZ_M"  # put in .env for real usage
-    DEV_AUTH_BYPASS: bool = True
+    HOST: str = os.getenv("HOST", "0.0.0.0")
+    PORT: int = int(os.getenv("PORT", 8000))
+    DEBUG: bool = os.getenv("DEBUG", "True").lower() == "true"
+    WS_PATH: str = os.getenv("WS_PATH", "/ws/run")
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite:///./tasks.db")
+    GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
+    DEV_AUTH_BYPASS: bool = os.getenv("DEV_AUTH_BYPASS", "True").lower() == "true"
 
 settings = Settings()

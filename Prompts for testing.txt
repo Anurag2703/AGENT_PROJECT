@@ -1,0 +1,10 @@
+Prompt 1 — Task Planning:
+Plan a daily schedule for a software engineer working remotely with 8 hours of work, 2 hours for learning, and 1 hour for fitness.
+
+
+Prompt 2 — Retrieval:
+Summarize the latest trends in AI for 2025, including key breakthroughs and practical applications.
+
+
+Prompt 3 — Computation + Self-Critique:
+Calculate the optimal investment portfolio for $50,000 in 2025, considering a balance of stocks, bonds, and crypto. Critique your own reasoning and suggest improvements.
